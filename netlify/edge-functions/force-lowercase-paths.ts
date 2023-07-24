@@ -9,7 +9,8 @@ export default async (request: Request, context: Context) => {
   } else {
     // Force url to redirect to lowercase
     const url = new URL(request.url.toLowerCase());
-    return Response.redirect(url);
+    return Response.redirect(url); // 301 to lowercase version of page
+    // return url; <- If you want to do a rewrite instead
   }
 };
 
